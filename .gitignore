@@ -1,0 +1,9 @@
+
+#Ignore files build by Visual Studio
+*.suo
+*.user
+bin/
+obj/
+x64/
+ipch/
+Debug/
