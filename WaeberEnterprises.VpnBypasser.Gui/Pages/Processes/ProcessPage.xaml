@@ -1,0 +1,22 @@
+﻿<Page x:Class="WaeberEnterprises.VpnBypasser.Gui.Pages.Processes.ProcessPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	
+	  Title="Processes"
+	  DataContext="{Binding RelativeSource={ RelativeSource Self }}"
+	  >
+	<!--GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"-->
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto">
+		<ListView ItemsSource="{Binding ProcessList}" Name="ProcessListView" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="Auto" Margin="10,10,0,0" Width="Auto">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Width="200" Header="Process name" DisplayMemberBinding="{Binding Name}"  />
+					<GridViewColumn Width="200" Header="PID" DisplayMemberBinding="{Binding Pid}" />
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</Grid>
+</Page>
