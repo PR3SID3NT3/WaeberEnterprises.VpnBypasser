@@ -174,6 +174,17 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </Library>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WaeberEnterprises.VpnBypasser.Core\WaeberEnterprises.VpnBypasser.Core.csproj">
+      <Project>{f9a431e6-7677-4f98-a355-81e06662d2c6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WaeberEnterprises.VpnBypasser.Network\WaeberEnterprises.VpnBypasser.Network.vcxproj">
+      <Project>{cdd152fa-a36e-4325-8f56-4a5927177bc1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WaeberEnterprises.VpnBypasser.Routing\WaeberEnterprises.VpnBypasser.Routing.vcxproj">
+      <Project>{69f2610c-7e7b-435b-bc98-29c3234690aa}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -56,10 +56,10 @@ namespace WaeberEnterprises
 					ipForwardRow->dwForwardDest = inet_addr(static_cast<char*>(Marshal::StringToHGlobalAnsi(routeEntryIdentifier->TargetNetworkAddress->ToString()).ToPointer()));
 					ipForwardRow->dwForwardNextHop = inet_addr(static_cast<char*>(Marshal::StringToHGlobalAnsi(routeEntryIdentifier->TargetGatewayAddress->ToString()).ToPointer()));
 					
-					// Todo
+					// TODO
 					ipForwardRow->dwForwardMetric1 = 10;
 
-					// Todo
+					// TODO
 					ipForwardRow->dwForwardIfIndex = 3;
 
 					// The dwForwardProto member must be set to MIB_IPPROTO_NETMGMT otherwise CreateIpForwardEntry will fail.
@@ -102,6 +102,8 @@ namespace WaeberEnterprises
 							return true;
 						}
 					}
+
+					return false;
 				}
 				
 				/// <summary>

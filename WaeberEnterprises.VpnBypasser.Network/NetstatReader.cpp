@@ -56,14 +56,14 @@ namespace WaeberEnterprises
 					return pUdpPidOwnerTable;
 				}
 			public:
-				int GetPidByPortAndProtocol(ProtocolType protocol, int port){
+				DWORD GetPidByPortAndProtocol(USHORT port, ProtocolType protocol){
 					if (protocol == ProtocolType::Tcp) {
 						u_int i = 0;
 						PMIB_TCPTABLE_OWNER_PID pTcpPidOwnerTable = this->ReadExtendedTcpTable();
 							
 						for (; i < pTcpPidOwnerTable->dwNumEntries; i++) {
 							MIB_TCPROW_OWNER_PID entry = pTcpPidOwnerTable->table[i];
-							if (ntohs(entry.dwLocalPort) == port) {
+							if (ntohs((USHORT)entry.dwLocalPort) == port) {
 								return entry.dwOwningPid;
 							}
 						}
@@ -73,7 +73,7 @@ namespace WaeberEnterprises
 														
 						for (i; i < pUdpPidOwnerTable->dwNumEntries; i++) {
 							MIB_UDPROW_OWNER_PID entry = pUdpPidOwnerTable->table[i];
-							if (ntohs(entry.dwLocalPort) == port) {
+							if (ntohs((USHORT)entry.dwLocalPort) == port) {
 								return entry.dwOwningPid;
 							}
 						}

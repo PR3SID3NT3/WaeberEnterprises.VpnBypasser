@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <Windows.h>
 #include <iphlpapi.h>
+#include <stdint.h>
 #include <stdio.h>
 
 #pragma comment(lib, "iphlpapi.lib")
@@ -33,7 +34,7 @@ namespace WaeberEnterprises
 					socket->Listen(10);
 
 					NetstatReader ^ netstatReader = gcnew NetstatReader();
-					int pid = netstatReader->GetPidByPortAndProtocol(ProtocolType::Tcp, 666);
+					DWORD pid = netstatReader->GetPidByPortAndProtocol(666, ProtocolType::Tcp);
 
 					Assert::That(pid, Is::EqualTo(Process::GetCurrentProcess()->Id));
 				}
@@ -48,7 +49,7 @@ namespace WaeberEnterprises
 					socket->BeginReceive(arr, 0, 10, SocketFlags::None, nullptr, nullptr);
 
 					NetstatReader ^ netstatReader = gcnew NetstatReader();
-					int pid = netstatReader->GetPidByPortAndProtocol(ProtocolType::Udp, 666);
+					DWORD pid = netstatReader->GetPidByPortAndProtocol(666, ProtocolType::Udp);
 
 					Assert::That(pid, Is::EqualTo(Process::GetCurrentProcess()->Id));
 				}

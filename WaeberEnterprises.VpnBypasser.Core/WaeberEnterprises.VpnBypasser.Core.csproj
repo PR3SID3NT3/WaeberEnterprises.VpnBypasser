@@ -58,7 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BypassApplicationInformationHolder.cs" />
     <Compile Include="Domain\RouteEntryIdentifier.cs" />
+    <Compile Include="Extensions\FilterCreator.cs" />
     <Compile Include="Network\InterfaceFinder.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -66,6 +68,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinDivert\Filter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">
